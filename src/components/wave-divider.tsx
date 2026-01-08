@@ -7,7 +7,7 @@ interface WaveDividerProps {
 }
 
 const WaveDivider: React.FC<WaveDividerProps> = ({ 
-  color = "#2F3A1D", 
+  color = "#F5F2E3", 
   position = "bottom",
   className = ""
 }) => {

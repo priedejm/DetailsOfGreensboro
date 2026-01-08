@@ -1,16 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tabs, Tab, Card, CardBody } from "@heroui/react";
-
-import ServiceCard from "../components/service-card";
-import WaveDivider from "../components/wave-divider";
+import { Card, CardBody } from "@heroui/react";
 
 const ServicesPage: React.FC = () => {
-  const [selected, setSelected] = React.useState("all");
-  
   return (
     <div className="flex flex-col">
-      <section className="bg-greensboro-green text-white py-16 md:py-20 relative">
+      {/* Header section */}
+      <section className="bg-greensboro-green text-white pt-24 md:pt-32 relative">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -26,163 +22,269 @@ const ServicesPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg mb-8 opacity-90 text-center max-w-3xl mx-auto"
           >
-            We offer a comprehensive range of auto detailing services to keep your vehicle looking its best. From basic cleaning to specialized treatments, we have you covered.
+            Professional auto detailing services in Greensboro. From interior deep cleans to paint correction, we'll make your vehicle shine.
           </motion.p>
         </div>
       </section>
       
-      <section className="bg-greensboro-cream py-16">
+      {/* Basic Detail Package */}
+      <section className="bg-greensboro-green pt-2 pb-8">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <Tabs 
-              aria-label="Service categories" 
-              selectedKey={selected} 
-              onSelectionChange={setSelected}
-              color="primary"
-              variant="underlined"
-              classNames={{
-                tabList: "bg-white p-2 rounded-lg shadow-sm",
-                cursor: "bg-greensboro-accent"
-              }}
-            >
-              <Tab key="all" title="All Services" />
-              <Tab key="detailing" title="Detailing" />
-              <Tab key="correction" title="Paint Correction" />
-              <Tab key="restoration" title="Restoration" />
-              <Tab key="protection" title="Protection" />
-            </Tabs>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services
-              .filter(service => selected === "all" || service.category === selected)
-              .map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  title={service.title}
-                  description={service.description}
-                  image={service.image}
-                  price={service.price}
-                  additionalInfo={service.additionalInfo}
-                />
-              ))}
-          </div>
-        </div>
-      </section>
-      
-      <section className="bg-greensboro-green text-white py-16 relative">
-        <WaveDivider color="#F5F2E3" position="top" />
-        
-        <div className="container mx-auto px-4 pt-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="bg-greensboro-cream rounded-3xl overflow-hidden max-w-6xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto">
-              Have questions about our services? Find answers to common questions below.
+            <div className="flex flex-col lg:flex-row">
+              {/* Image side */}
+              <div className="lg:w-1/3 h-64 lg:h-auto relative">
+                <img 
+                  src="/assets/4.jpg" 
+                  alt="Basic Detailing Service" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-greensboro-cream via-greensboro-cream/50 to-transparent" />
+              </div>
+              
+              {/* Content side */}
+              <div className="lg:w-2/3 p-8 md:p-10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                  <h2 className="text-3xl md:text-4xl font-bold text-greensboro-green">Basic Detail Package</h2>
+                  <span className="inline-block mt-2 sm:mt-0 px-4 py-1 bg-greensboro-green/10 rounded-full text-sm text-greensboro-green font-medium">
+                    XL Truck/SUV: +$25-50
+                  </span>
+                </div>
+                
+                <p className="text-greensboro-green mb-6 text-lg">
+                  Our signature service that transforms your vehicle inside and out. Deep interior cleaning with vacuum and deodorizing, full dash/console/door panel detail, crystal-clear glass, hand wash, wax, and tire shine.
+                </p>
+                
+                {/* Pricing Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                  <div className="bg-white/60 rounded-2xl p-5 text-center">
+                    <p className="text-greensboro-accent font-semibold text-sm uppercase tracking-wide mb-1">Monthly Members</p>
+                    <p className="text-3xl font-bold text-greensboro-green">$100</p>
+                    <p className="text-xs text-greensboro-green/70 mt-1">Consecutive monthly customers</p>
+                  </div>
+                  <div className="bg-white/60 rounded-2xl p-5 text-center">
+                    <p className="text-greensboro-accent font-semibold text-sm uppercase tracking-wide mb-1">Standard</p>
+                    <p className="text-3xl font-bold text-greensboro-green">$125-175</p>
+                    <p className="text-xs text-greensboro-green/70 mt-1">Based on vehicle condition*</p>
+                  </div>
+                  <div className="bg-white/60 rounded-2xl p-5 text-center">
+                    <p className="text-greensboro-accent font-semibold text-sm uppercase tracking-wide mb-1">Book Now</p>
+                    <a 
+                      href="/contact"
+                      className="inline-block mt-2 px-6 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
+                    >
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-xs text-greensboro-green/60 mb-6">
+                  *Price varies based on factors such as mud, dog hair, exterior mold, excessive personal belongings, etc.
+                </p>
+                
+                {/* Add-ons */}
+                <div className="border-t border-greensboro-green/20 pt-6">
+                  <h3 className="text-lg font-bold text-greensboro-green mb-4">Enhance Your Detail</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-white/40 rounded-xl p-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="font-semibold text-greensboro-green">Steam Cleaning</h4>
+                        <span className="text-greensboro-accent font-bold">+$50</span>
+                      </div>
+                      <p className="text-sm text-greensboro-green/80">
+                        Complete interior steam treatment — dashboard, consoles, door panels, and steering wheel sanitized and refreshed.
+                      </p>
+                    </div>
+                    <div className="bg-white/40 rounded-xl p-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="font-semibold text-greensboro-green">Steam + Shampoo</h4>
+                        <span className="text-greensboro-accent font-bold">+$100</span>
+                      </div>
+                      <p className="text-sm text-greensboro-green/80">
+                        Deep extraction cleaning. Choose one: floor mats, carpet floors, or seats. Contact us for additional areas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      {/* Specialty Services */}
+      <section className="bg-greensboro-green py-8 pb-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl font-bold text-white mb-6 text-center"
+            >
+              Specialty Services
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Paint Correction */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-greensboro-cream rounded-3xl overflow-hidden"
+              >
+                <div className="flex flex-col sm:flex-row h-full">
+                  <div className="sm:w-2/5 h-48 sm:h-auto">
+                    <img 
+                      src="/assets/3.jpg" 
+                      alt="Paint Correction" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="sm:w-3/5 p-6 flex flex-col">
+                    <h3 className="text-2xl font-bold text-greensboro-green mb-3">Paint Correction</h3>
+                    <p className="text-greensboro-green/90 text-sm mb-4 flex-grow">
+                      Restore your paint's showroom brilliance. Our meticulous process removes swirl marks, scratches, and oxidation using professional-grade polishers, compounds, and microfiber techniques.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-greensboro-green/20">
+                      <div>
+                        <p className="text-sm text-greensboro-green/70">Starting at</p>
+                        <p className="text-2xl font-bold text-greensboro-green">$400</p>
+                      </div>
+                      <a 
+                        href="/contact"
+                        className="px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
+                      >
+                        Get Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Headlight Restoration */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-greensboro-cream rounded-3xl overflow-hidden"
+              >
+                <div className="flex flex-col sm:flex-row h-full">
+                  <div className="sm:w-2/5 h-48 sm:h-auto">
+                    <img 
+                      src="/assets/1.jpg" 
+                      alt="Headlight Restoration" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="sm:w-3/5 p-6 flex flex-col">
+                    <h3 className="text-2xl font-bold text-greensboro-green mb-3">Headlight Restoration</h3>
+                    <p className="text-greensboro-green/90 text-sm mb-4 flex-grow">
+                      Revive cloudy, yellowed headlights for improved visibility and appearance. We use professional sanding, polishing compounds, and UV sealant for lasting clarity.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-greensboro-green/20">
+                      <div className="flex gap-4">
+                        <div>
+                          <p className="text-xs text-greensboro-green/70">Standalone</p>
+                          <p className="text-xl font-bold text-greensboro-green">$75</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-greensboro-green/70">With Detail</p>
+                          <p className="text-xl font-bold text-greensboro-accent">$50</p>
+                        </div>
+                      </div>
+                      <a 
+                        href="/contact"
+                        className="px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
+                      >
+                        Book Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ section */}
+      <section className="bg-greensboro-green text-white py-16">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Common Questions</h2>
+            <p className="text-lg opacity-80 max-w-xl mx-auto">
+              Everything you need to know before booking
             </p>
           </motion.div>
           
-          <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="mb-6"
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card className="bg-white text-greensboro-green">
-                  <CardBody>
-                    <h3 className="text-xl font-semibold mb-2">{faq.question}</h3>
-                    <p>{faq.answer}</p>
-                  </CardBody>
-                </Card>
+                <div className="bg-greensboro-cream rounded-2xl p-5 h-full">
+                  <h3 className="text-lg font-semibold text-greensboro-green mb-2">{faq.question}</h3>
+                  <p className="text-greensboro-green/80 text-sm">{faq.answer}</p>
+                </div>
               </motion.div>
             ))}
           </div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-10"
+          >
+            <p className="text-white/70 mb-4">Still have questions?</p>
+            <a 
+              href="/contact"
+              className="inline-block px-8 py-3 bg-greensboro-cream text-greensboro-green rounded-lg font-medium hover:bg-white transition-all"
+            >
+              Contact Us
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>
   );
 };
 
-const services = [
-  {
-    title: "Basic Detailing",
-    description: "Our basic detailing package includes a thorough exterior wash, tire and wheel cleaning, interior vacuuming, surface cleaning, and window cleaning.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=6",
-    price: "150",
-    category: "detailing",
-    additionalInfo: ["2-3 hours service time", "Includes interior & exterior"]
-  },
-  {
-    title: "Premium Detailing",
-    description: "Our premium package includes everything in the basic package plus leather conditioning, carpet shampooing, engine bay detailing, and a hand wax finish.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=7",
-    price: "250",
-    category: "detailing",
-    additionalInfo: ["4-5 hours service time", "Deep interior cleaning", "Hand wax finish"]
-  },
-  {
-    title: "Paint Correction",
-    description: "Our paint correction service removes swirl marks, scratches, and oxidation to restore your vehicle's paint to a like-new condition.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=8",
-    price: "400",
-    category: "correction",
-    additionalInfo: ["Multi-stage polishing", "Removes swirl marks & scratches"]
-  },
-  {
-    title: "Ceramic Coating",
-    description: "Protect your vehicle's paint with a ceramic coating that provides long-lasting protection against environmental contaminants and UV damage.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=9",
-    price: "800",
-    category: "protection",
-    additionalInfo: ["2-5 years protection", "Hydrophobic properties", "UV resistance"]
-  },
-  {
-    title: "Headlight Restoration",
-    description: "Restore clarity to yellowed or foggy headlights, improving both appearance and safety with our professional restoration service.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=10",
-    price: "75",
-    category: "restoration",
-    additionalInfo: ["Improves visibility", "UV sealant applied", "50$ with detail booking"]
-  },
-  {
-    title: "Interior Detail",
-    description: "Our interior detailing service includes deep cleaning of all interior surfaces, shampooing of carpets and upholstery, and treatment of leather surfaces.",
-    image: "https://img.heroui.chat/image/places?w=400&h=300&u=11",
-    price: "175",
-    category: "detailing",
-    additionalInfo: ["3-4 hours service time", "Includes steam cleaning"]
-  }
-];
-
 const faqs = [
   {
     question: "How long does a full detail take?",
-    answer: "A full detail typically takes 4-6 hours depending on the size and condition of your vehicle. For premium services like paint correction, it may take longer."
+    answer: "Typically 4-6 hours depending on vehicle size and condition. Paint correction may take longer."
   },
   {
-    question: "Do I need to prepare my car before bringing it in?",
-    answer: "We recommend removing personal items from your vehicle before service, but it's not required. We'll work around anything left in the vehicle."
+    question: "Should I prepare my car beforehand?",
+    answer: "We recommend removing personal items, but it's not required — we'll work around them."
   },
   {
-    question: "How often should I get my car detailed?",
-    answer: "For optimal results, we recommend a basic detail every 3-4 months and a premium detail twice a year. This frequency may vary based on your driving conditions and how you use your vehicle."
+    question: "How often should I detail my car?",
+    answer: "Basic detail every 3-4 months, premium detail twice yearly. May vary based on use and conditions."
   },
   {
-    question: "How long does ceramic coating last?",
-    answer: "Our ceramic coatings typically last 2-5 years with proper maintenance. We offer different grades of coating with varying durability and protection levels."
-  },
-  {
-    question: "Do you offer mobile detailing services?",
-    answer: "Yes, we offer mobile detailing services within the Greensboro area for an additional fee. Please contact us for availability and pricing."
+    question: "Do you offer mobile services?",
+    answer: "Yes! We offer mobile detailing within the Greensboro area for an additional fee."
   }
 ];
 
