@@ -12,7 +12,7 @@ export default {
       colors: {
         'greensboro': {
           'green': '#2F3A1D',
-          'cream': '#F5F2E3',
+          'cream': '#efe8d5',
           'accent': '#5A7052',
           'button': '#6A8D8D'
         }

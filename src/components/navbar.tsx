@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Add Google Font link to head
 const fontLink = document.createElement('link');
-fontLink.href = 'https://fonts.googleapis.com/css2?family=Sacramento&display=swap';
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap';
 fontLink.rel = 'stylesheet';
 document.head.appendChild(fontLink);
 
@@ -23,12 +23,13 @@ const Navbar = () => {
   return (
     <header className="relative" style={{ zIndex: 10 }}>
       {/* Wave Navigation Bar - reduced height on mobile */}
-      <div className="relative h-[60px] md:h-[80px] bg-[#F5F2E3]">
+      <div className="relative h-[60px] md:h-[80px] bg-[#efe8d5]">
         {/* Logo positioned on the wave */}
         <a 
           href="/" 
           onClick={() => { handleNavClick('/'); window.scrollTo(0, 0); }}
-          className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-10 flex items-center cursor-pointer"
+          className="absolute left-4 md:left-8 z-10 flex items-center cursor-pointer"
+          style={{ top: 'calc(50% + 20px)', transform: 'translateY(-50%)' }}
         >
           <img
             src="/assets/Logo1.png" 
@@ -38,11 +39,14 @@ const Navbar = () => {
               e.currentTarget.style.display = 'none';
             }}
           />
-          <h1 className="text-2xl md:text-3xl text-[#2F3A1D] font-normal" style={{ fontFamily: "'Sacramento', cursive" }}>Details of Greensboro</h1>
+          <h1 className="text-2xl md:text-3xl text-[#2F3A1D] font-normal" style={{ fontFamily: "'Permanent Marker', cursive" }}>Details of Greensboro</h1>
         </a>
         
         {/* Desktop navigation on wave */}
-        <div className="hidden md:flex absolute top-1/2 right-8 transform -translate-y-1/2 z-10 space-x-8 items-center">
+        <div 
+          className="hidden md:flex absolute right-8 z-10 space-x-8 items-center"
+          style={{ top: 'calc(50% + 20px)', transform: 'translateY(-50%)' }}
+        >
           <a 
             href="/" 
             onClick={() => handleNavClick('/')}
@@ -109,7 +113,8 @@ const Navbar = () => {
         
         {/* Mobile menu button on wave */}
         <button 
-          className="md:hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50"
+          className="md:hidden absolute right-4 z-50"
+          style={{ top: 'calc(50% + 20px)', transform: 'translateY(-50%)' }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg className={`w-6 h-6 text-[#2F3A1D]`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +140,7 @@ const Navbar = () => {
           >
             <path 
               d="m0 192 80-24C160 144 320 104 480 124c160 20 320 76 480 96s320-20 400-40l80-20v192H0Z"
-              fill="#F5F2E3"
+              fill="#efe8d5"
             />
           </svg>
         </div>
@@ -147,7 +152,7 @@ const Navbar = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
-          className="fixed inset-0 bg-[#F5F2E3] md:hidden"
+          className="fixed inset-0 bg-[#efe8d5] md:hidden"
           style={{ zIndex: 9999 }}
         >
           <button 

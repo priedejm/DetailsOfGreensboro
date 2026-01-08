@@ -272,7 +272,7 @@ const ServicesPage: React.FC = () => {
 const faqs = [
   {
     question: "How long does a full detail take?",
-    answer: "Typically 4-6 hours depending on vehicle size and condition. Paint correction may take longer."
+    answer: "Typically 2-4 hours depending on vehicle size and condition. Paint correction may take longer."
   },
   {
     question: "Should I prepare my car beforehand?",

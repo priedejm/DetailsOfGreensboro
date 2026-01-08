@@ -216,7 +216,7 @@ const HomePage = () => {
       </section>
       
       {/* Services Section */}
-      <section className="bg-[#F5F2E3] py-16 md:py-24">
+      <section className="bg-[#efe8d5] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -293,7 +293,7 @@ const HomePage = () => {
           >
             <path 
               d="m0 128 80-10.7C160 107 320 85 480 96c160 11 320 53 480 64s320-11 400-21.3l80-10.7v192H0Z"
-              fill="#F5F2E3"
+              fill="#efe8d5"
             />
           </svg>
         </div>
@@ -328,28 +328,28 @@ const HomePage = () => {
                 className="space-y-4"
               >
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-[#F5F2E3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 mr-3 text-[#efe8d5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <div>
                     <p className="text-sm opacity-80">Call Us / Text Us</p>
-                    <a href="tel:3365426266" className="text-lg font-semibold hover:text-[#F5F2E3] transition-colors">
+                    <a href="tel:3365426266" className="text-lg font-semibold hover:text-[#efe8d5] transition-colors">
                       (336) 542-6266
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-[#F5F2E3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 mr-3 text-[#efe8d5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:info@detailsofgreensboro.com" className="hover:text-[#F5F2E3] transition-colors">
+                  <a href="mailto:info@detailsofgreensboro.com" className="hover:text-[#efe8d5] transition-colors">
                     info@detailsofgreensboro.com
                   </a>
                 </div>
                 
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-[#F5F2E3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 mr-3 text-[#efe8d5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -357,7 +357,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-[#F5F2E3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 mr-3 text-[#efe8d5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
@@ -452,7 +452,7 @@ const HomePage = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="bg-[#F5F2E3] py-16 md:py-24">
+      <section className="bg-[#efe8d5] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -529,7 +529,7 @@ const HomePage = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-[#F5F2E3] rounded-xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
+              className="bg-[#efe8d5] rounded-xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-0 bg-[#2F3A1D] text-white p-4 flex items-center justify-between z-10">
