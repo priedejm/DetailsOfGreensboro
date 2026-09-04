@@ -94,13 +94,13 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="/services" onClick={scrollToTop} className="text-white/70 hover:text-greensboro-cream transition-colors flex items-center">
                   <Icon icon="lucide:chevron-right" className="mr-1 text-sm" />
-                  Headlight Restoration
+                  Ceramic Coating
                 </Link>
               </li>
               <li>
                 <Link to="/services" onClick={scrollToTop} className="text-white/70 hover:text-greensboro-cream transition-colors flex items-center">
                   <Icon icon="lucide:chevron-right" className="mr-1 text-sm" />
-                  Steam Cleaning
+                  Headlight Restoration
                 </Link>
               </li>
             </ul>
@@ -120,10 +120,10 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@detailsofgreensboro.com" className="flex items-start text-white/70 hover:text-greensboro-cream transition-colors">
+                <a href="mailto:detailsofgreensboro@gmail.com" className="flex items-start text-white/70 hover:text-greensboro-cream transition-colors">
                   <Icon icon="lucide:mail" className="mr-3 mt-1 text-greensboro-accent" />
                   <div>
-                    <p className="font-medium text-white">info@detailsofgreensboro.com</p>
+                    <p className="font-medium text-white">detailsofgreensboro@gmail.com</p>
                     <p className="text-xs">Email us anytime</p>
                   </div>
                 </a>

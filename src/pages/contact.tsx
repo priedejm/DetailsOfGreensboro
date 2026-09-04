@@ -175,8 +175,8 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs text-greensboro-accent">Email</p>
-                      <a href="mailto:info@detailsofgreensboro.com" className="text-greensboro-green font-medium hover:text-greensboro-accent transition-colors">
-                        info@detailsofgreensboro.com
+                      <a href="mailto:detailsofgreensboro@gmail.com" className="text-greensboro-green font-medium hover:text-greensboro-accent transition-colors">
+                        detailsofgreensboro@gmail.com
                       </a>
                     </div>
                   </div>

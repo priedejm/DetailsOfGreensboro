@@ -94,20 +94,20 @@ const ServicesPage: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="bg-white/40 rounded-xl p-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-semibold text-greensboro-green">Steam Cleaning</h4>
-                        <span className="text-greensboro-accent font-bold">+$50</span>
+                        <h4 className="font-semibold text-greensboro-green">3-6 Month Ceramic Coating</h4>
+                        <span className="text-greensboro-accent font-bold">+$25</span>
                       </div>
                       <p className="text-sm text-greensboro-green/80">
-                        Complete interior steam treatment — dashboard, consoles, door panels, and steering wheel sanitized and refreshed.
+                        A lightweight ceramic coating add-on for any detailing package, giving your paint added shine and protection for 3 to 6 months.
                       </p>
                     </div>
                     <div className="bg-white/40 rounded-xl p-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-semibold text-greensboro-green">Steam + Shampoo</h4>
+                        <h4 className="font-semibold text-greensboro-green">Shampoo/Extraction</h4>
                         <span className="text-greensboro-accent font-bold">+$100</span>
                       </div>
                       <p className="text-sm text-greensboro-green/80">
-                        Deep extraction cleaning. Choose one: floor mats, carpet floors, or seats. Contact us for additional areas.
+                        Deep extraction cleaning of floor mats, carpet floors, and seats.
                       </p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ const ServicesPage: React.FC = () => {
               Specialty Services
             </motion.h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               {/* Paint Correction */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -142,33 +142,41 @@ const ServicesPage: React.FC = () => {
               >
                 <div className="flex flex-col sm:flex-row h-full">
                   <div className="sm:w-2/5 h-48 sm:h-auto">
-                    <img 
-                      src="/assets/3.jpg" 
-                      alt="Paint Correction" 
+                    <img
+                      src="/assets/3.jpg"
+                      alt="Paint Correction"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="sm:w-3/5 p-6 flex flex-col">
                     <h3 className="text-2xl font-bold text-greensboro-green mb-3">Paint Correction</h3>
-                    <p className="text-greensboro-green/90 text-sm mb-4 flex-grow">
-                      Restore your paint's showroom brilliance. Our meticulous process removes swirl marks, scratches, and oxidation using professional-grade polishers, compounds, and microfiber techniques.
+                    <p className="text-greensboro-green/90 text-sm mb-4">
+                      Restore your paint's showroom brilliance. Our meticulous process removes swirl marks, scratches, and oxidation using professional-grade polishers and compounds.
                     </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-greensboro-green/20">
-                      <div>
-                        <p className="text-sm text-greensboro-green/70">Starting at</p>
-                        <p className="text-2xl font-bold text-greensboro-green">$400</p>
+                    <div className="space-y-2 pt-4 border-t border-greensboro-green/20">
+                      <div className="flex justify-between items-baseline gap-2">
+                        <span className="text-sm text-greensboro-green/80">Level 1 — Overall polish</span>
+                        <span className="text-sm font-bold text-greensboro-green whitespace-nowrap">$250</span>
                       </div>
-                      <a 
-                        href="/contact"
-                        className="px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
-                      >
-                        Get Quote
-                      </a>
+                      <div className="flex justify-between items-baseline gap-2">
+                        <span className="text-sm text-greensboro-green/80">Level 2 — Cut and polish</span>
+                        <span className="text-sm font-bold text-greensboro-green whitespace-nowrap">Starting at $500</span>
+                      </div>
+                      <div className="flex justify-between items-baseline gap-2">
+                        <span className="text-sm text-greensboro-green/80">Level 3 — Full correction, wet sanding &amp; sealing</span>
+                        <span className="text-sm font-bold text-greensboro-green whitespace-nowrap">Starting at $800</span>
+                      </div>
                     </div>
+                    <a
+                      href="/contact"
+                      className="inline-block mt-4 self-start px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
+                    >
+                      Get Quote
+                    </a>
                   </div>
                 </div>
               </motion.div>
-              
+
               {/* Headlight Restoration */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -179,9 +187,9 @@ const ServicesPage: React.FC = () => {
               >
                 <div className="flex flex-col sm:flex-row h-full">
                   <div className="sm:w-2/5 h-48 sm:h-auto">
-                    <img 
-                      src="/assets/1.jpg" 
-                      alt="Headlight Restoration" 
+                    <img
+                      src="/assets/1.jpg"
+                      alt="Headlight Restoration"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -201,7 +209,7 @@ const ServicesPage: React.FC = () => {
                           <p className="text-xl font-bold text-greensboro-accent">$50</p>
                         </div>
                       </div>
-                      <a 
+                      <a
                         href="/contact"
                         className="px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
                       >
@@ -212,6 +220,52 @@ const ServicesPage: React.FC = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Ceramic Coating */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-greensboro-cream rounded-3xl overflow-hidden"
+            >
+              <div className="flex flex-col lg:flex-row h-full">
+                <div className="lg:w-1/3 h-48 lg:h-auto">
+                  <img
+                    src="/assets/wide4.png"
+                    alt="Ceramic Coating"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="lg:w-2/3 p-6 flex flex-col">
+                  <h3 className="text-2xl font-bold text-greensboro-green mb-3">Ceramic Coating</h3>
+                  <p className="text-greensboro-green/90 text-sm mb-4">
+                    Protect your paint with a durable ceramic coating that enhances gloss and shields against UV rays, dirt, and environmental damage.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-greensboro-green/20">
+                    <div>
+                      <p className="text-sm text-greensboro-green/70">7-9 Year Coating</p>
+                      <p className="text-xl font-bold text-greensboro-green">Starting at $850</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-greensboro-green/70">3-5 Year Coating</p>
+                      <p className="text-xl font-bold text-greensboro-green">Starting at $750</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-greensboro-green/70">3-6 Month Coating</p>
+                      <p className="text-xl font-bold text-greensboro-green">$25</p>
+                      <p className="text-xs text-greensboro-green/70 mt-1">Add-on to any detailing</p>
+                    </div>
+                  </div>
+                  <a
+                    href="/contact"
+                    className="inline-block mt-5 self-start px-5 py-2 bg-greensboro-accent text-white rounded-lg font-medium hover:bg-opacity-90 transition-all text-sm"
+                  >
+                    Get Quote
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -272,19 +326,19 @@ const ServicesPage: React.FC = () => {
 const faqs = [
   {
     question: "How long does a full detail take?",
-    answer: "Typically 2-4 hours depending on vehicle size and condition. Paint correction may take longer."
+    answer: "A full detail typically takes 1-2.5 hours."
   },
   {
     question: "Should I prepare my car beforehand?",
-    answer: "We recommend removing personal items, but it's not required — we'll work around them."
+    answer: "We kindly ask that you remove all personal items from the vehicle, except those in the center console and glove compartment — neither is cleaned during a basic detail."
   },
   {
     question: "How often should I detail my car?",
-    answer: "Basic detail every 3-4 months, premium detail twice yearly. May vary based on use and conditions."
+    answer: "We recommend a basic detail once a month, with a premium detail — including paint enhancement and shampooing — once a year."
   },
   {
     question: "Do you offer mobile services?",
-    answer: "Yes! We offer mobile detailing within the Greensboro area for an additional fee."
+    answer: "Yes! We offer mobile detailing within the Greensboro area. Drop-off is also available."
   }
 ];
 
